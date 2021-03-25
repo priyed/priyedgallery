@@ -1,13 +1,213 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  scroll-behavior: smooth;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+  height: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+header h2 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: underline;
+  color: #8B5CF6;
+  cursor: pointer;
+  margin: 48px 0 32px 32px;
+}
+
+.no-result {
+  margin: 128px auto 0;
+  text-align: center;
+  color: blueviolet;
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.loading-text {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 128px;
+  font-size: 60px;
+  line-height: 1;
+  color: blueviolet;
+}
+
+.images-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* Start Image Card styling */
+.img-wrap {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  max-width: 384px;
+  margin: 20px auto;
+  padding: 0 10px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+  box-shadow:  0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.img-wrap:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) ;
+}
+
+.img-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5px 24px;
+  margin: 0 10px;
+  display: flex;
+  background: linear-gradient(180deg, #31313102 0%, #1b1b1bc7 100%);
+  color: white;
+  visibility: hidden;
+  transform: translateY(0);
+  transition: all .1s ease;
+}
+
+.img-wrap:hover .img-description {
+  visibility: visible;
+  transform: translateY(-3px);
+}
+
+.img-wrap img {
+  width: 100%;
+}
+
+.img-description h4 {
+  margin-bottom: 8px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+ul li svg {
+  width: 24px;
+  display: inline;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+ul li svg:hover {
+  fill: silver;
+}
+/* End Image Card styling */
+
+/* Start Image Search styling */
+.search-container {
+  max-width: 24rem;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.search-container form {
+  width: 80%;
+  max-width: 24rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+form .form-wrap {
+  display: flex;
+  align-items: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid rgba(167, 139, 250);
+}
+
+.form-wrap input {
+  width: 100%;
+  padding: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  line-height: 1.25;
+  color: rgba(55, 65, 81);
+  background-color: transparent;
+  border: none;
+  appearance: none;
+}
+
+.form-wrap input:focus {
+  outline: none;
+}
+
+.form-wrap button {
+  flex-shrink: 0;
+  padding: 8px 15px;
+  font-size: 14px;
+  line-height: 1.25;
+  color: white;
+  background-color: rgba(139, 92, 246);
+  border-color:rgba(139, 92, 246);
+  border-radius: 2px;
+  border: none;
+}
+
+.form-wrap button:hover {
+  background-color: rgb(124, 58, 237);
+  border-color: rgb(124, 58, 237);
+}
+
+.form-wrap button:focus {
+  outline: none;
+}
+
+/* End Image Search styling */
+
+.theme-changer {
+  margin: 56px 32px 32px 0;
+  cursor: pointer;
+}
+
+
+#btn {
+  position: fixed;
+  display: none;
+  bottom: 30px;
+  right: 30px;
+  opacity: 0.7;
+  z-index: 9999;
+  border: none;
+  color: white;
+  background-color: #c1c1c193;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover, .btn:active {
+  background-color: #555;
+  outline: none;
+  border: none;
 }

@@ -1,0 +1,13 @@
+body.dark-mode {
+    background: hsl(216, 15%, 13%);
+    color: #d1d1d1;
+    transition: all 0.2s ease-in-out;
+}
+
+body.dark-mode input {
+    color: #d1d1d1;
+}
+
+body.btn {
+    color: white;
+}
